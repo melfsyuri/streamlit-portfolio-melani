@@ -27,8 +27,6 @@ PROFILE = {
         "A portfolio dashboard to explore financial and stock performance insights "
         "using an integrated monthly dataset."
     ),
-    "email": "melani.yuridis@gmail.com",
-    "linkedin": "https://linkedin.com/melani678",
     "github": "https://github.com/melfsyuri",  
     "location": "Indonesia",
 }
@@ -100,8 +98,6 @@ def render_profile_card():
     st.sidebar.write(f"**{PROFILE['name']}**")
     st.sidebar.write(PROFILE["role"])
     st.sidebar.write(f"📍 {PROFILE['location']}")
-    st.sidebar.markdown(f"📧 {PROFILE['email']}")
-    st.sidebar.markdown(f"🔗 [LinkedIn]({PROFILE['linkedin']})")
     if PROFILE.get("github"):
         st.sidebar.markdown(f"💻 [GitHub]({PROFILE['github']})")
     st.sidebar.markdown("---")
@@ -209,21 +205,6 @@ def page_home(df: pd.DataFrame):
     st.subheader("Quick Preview")
     st.dataframe(df.head(10), width="stretch")
 
-
-# HALAMAN: ABOUT ME
-
-def page_about_me():
-    st.title("👩‍💼 About Me")
-
-    st.markdown(
-        f"""
-        Hello, I’m **{PROFILE['name']}**.  
-        This portfolio app is built to present data analysis results in a more accessible and interactive way for non-technical stakeholders.
-
-        I use Streamlit to transform analysis outputs into a dashboard that is easier to explore, interpret, and communicate.
-        """
-    )
-
     st.markdown("### 🎯 Focus in This Portfolio")
     st.markdown(
         """
@@ -242,11 +223,68 @@ def page_about_me():
         """
     )
 
-    st.markdown("### 📄 Note")
-    st.caption(
-        "You can further customize this section with details from your CV "
-        "(education, experience, certifications, projects, and achievements)."
+# HALAMAN: ABOUT ME
+
+def page_about_me():
+    st.title("👩‍💼 About Me")
+
+    st.markdown(
+        f"""
+        Hello, I’m **{PROFILE['name']}**.  
+        This portfolio app is built to present data analysis results in a more accessible and interactive way for non-technical stakeholders.
+
+        I use Streamlit to transform analysis outputs into a dashboard that is easier to explore, interpret, and communicate.
+        """
     )
+
+    st.markdown("### 📄 Professional Summary")
+    st.info(
+        "Economics researcher & aspiring business analyst dengan fokus pada data analysis, "
+        "market research, dan financial economics untuk menghasilkan insight strategis."
+    )
+
+    with st.expander("🎓 Education", expanded=True):
+        st.markdown("""
+         - **M.A. in Economics** — Universitas Islam Internasional Indonesia (2022–2024), GPA **3.48/4.00**
+        - **S.Bns in Business** — IPB University (2015–2020), GPA **3.57/4.00**
+        """)
+
+    with st.expander("📚 Current Learning / Training"):
+        st.markdown("""
+        **Data Scientist/Analyst — Dibimbing.id (2025–Present)**  
+        Python (EDA, data cleaning, visualization), statistics & hypothesis testing, SQL/PostgreSQL,
+        web scraping/API & ETL basics, dashboarding (Power BI/Tableau), business analytics,
+        machine learning, Git, Streamlit, automation workflow (n8n).
+        """)
+
+    with st.expander("💼 Selected Experience"):
+        st.markdown("""
+        - **Project Assistant — FITRA Sumut (2022)**: procurement project handling with ICW.
+        - **Co-founder (Finance) — Sakolah (2020–2022)**: financial planning, transaction analysis, financial statements.
+        - **Intern Business Development — Aspenku.com (2019)**: user acquisition, product research, copywriting/content.
+        - **Junior Reporter — Public Relations IPB University (2017–2020)**: article writing for IPB community.
+        """)
+
+    with st.expander("🛠️ Skills"):
+        st.markdown("""
+        - **Python, Pandas, NumPy, scikit-learn**
+        - **SQL (PostgreSQL)**
+        - **Power BI, Tableau, Matplotlib, Seaborn, Streamlit**
+        - **Jupyter/Colab, Git, VS Code, DBeaver, BeautifulSoup, n8n**
+        - **SPSS, EViews, Stata, SEM-PLS, MS Office**
+        """)
+
+    with st.expander("🏆 Highlights"):
+        st.markdown("""
+        - Published paper (Sinta 3)
+        - Strong foundation in economics + business + data analytics
+        - Portfolio-focused dashboard and data storytelling approach
+        """)
+
+    st.success(
+        "Portfolio ini menampilkan analisis segmentasi kondisi kinerja keuangan BSI dan kaitannya "
+        "dengan pergerakan saham BRIS untuk monitoring dan evaluasi yang lebih terstruktur."
+        )
 
 
 # HALAMAN: DASHBOARD
