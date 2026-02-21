@@ -4,17 +4,17 @@ import plotly.express as px
 
 # Konfigurasi halaman
 st.set_page_config(
-    page_title="Portfolio Data – Melani",
+    page_title="DataView Analytics by Melani",
     page_icon="📊",
     layout="wide",
     initial_sidebar_state="expanded",
 )
 
 # Judul utama
-st.title("📊 Portfolio Data dengan Streamlit")
+st.title("DataView Analytics")
 st.markdown(
     """
-Aplikasi ini adalah portfolio sederhana untuk menampilkan dan mengeksplorasi data dari project saya.
+Transfor Your Raw Data into Meaningful Insight.
 Silakan upload file **CSV** dari project/data yang ingin dianalisis.
 """
 )
